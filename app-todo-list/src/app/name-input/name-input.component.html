@@ -1,0 +1,11 @@
+
+<form>
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Your name" [(value)]="name">
+        <mat-option *ngFor="let person of people" [value]="person.name" >
+          {{person.name}}
+        </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+<button mat-raised-button (click)="enterName()">Submit</button>

@@ -1,1 +1,22 @@
-<app-input></app-input>
+<app-name-input
+  [(name)]="curName"
+  *ngIf="!curName"
+  (nameEntered)="showMainComponent()"
+  [people]="curPeople"
+></app-name-input>
+
+<app-main-view
+  *ngIf="curName && main"
+  [name]="curName"
+  (todosChange)="updateTodos($event)"
+  (addChange)="showAddComponent()"
+>
+
+</app-main-view>
+<app-output-todos
+*ngIf="curTodos.length > 0 && output"
+[todos]="curTodos"
+(addChange)="showAddComponent($event)"
+(deleteTodoChange)="deleteTodo($event)"
+></app-output-todos>
+<app-add-todo *ngIf="add" (addedTodo)="showMainComponent()" (backToMain)="showMainComponent()"  [todo]="temp" [people]="curPeople"></app-add-todo>

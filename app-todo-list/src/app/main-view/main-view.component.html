@@ -1,0 +1,4 @@
+<h1>hello {{name}}</h1>
+<mat-checkbox [(ngModel)]="showOnlyUndone" (change)="onTodoChange()">Only see undone todos</mat-checkbox><br>
+<mat-checkbox [(ngModel)]="showOnlyAssignedToMe" (change)="onTodoChange()">assigned only to me</mat-checkbox><br>
+<button mat-raised-button (click)="addTodo()">add Todo </button><br><br><br>

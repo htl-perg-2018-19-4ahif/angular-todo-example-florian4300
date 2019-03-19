@@ -1,0 +1,17 @@
+<form (ngSubmit)="addTodo()" ngNativeValidate>
+  <mat-form-field class="example-full-width">
+    <input type="text" matInput placeholder="description" class="form-control" id="description" name="description" [(ngModel)]="description" required>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="assigned to" [(value)]="assignedTo">
+        <mat-option *ngFor="let person of people" [value]="person.name" >
+          {{person.name}}
+        </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+  <mat-checkbox [(ngModel)]="done" name="done">Done</mat-checkbox><br>
+  <button type="submit" mat-raised-button>Add</button>
+</form>
+<br>
+<button mat-button (click)="backToMainComponent()" mat-raised-button>back to overview</button>

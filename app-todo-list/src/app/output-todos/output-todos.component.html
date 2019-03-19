@@ -1,0 +1,18 @@
+<div *ngFor="let todo of todos">
+  <mat-card>
+    <mat-card-title
+      >{{ todo.description }}
+      <button mat-icon-button (click)="editTodo(todo)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteTodo(todo)">
+        <mat-icon>delete</mat-icon>
+      </button></mat-card-title>
+
+    This task is assigned to: {{ todo.assignedTo ? todo.assignedTo : "Nobody"
+    }}<br />
+    <mat-icon *ngIf="!todo.done">close</mat-icon>
+    <mat-icon *ngIf="todo.done">check</mat-icon>
+  </mat-card>
+  <br />
+</div>

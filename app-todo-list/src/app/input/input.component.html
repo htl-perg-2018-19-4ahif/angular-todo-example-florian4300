@@ -1,7 +1,0 @@
-<mat-checkbox [(ngModel)]="showOnlyUndone">Only see undone todos</mat-checkbox><br>
-<mat-checkbox [(ngModel)]="showOnlyAssignedToMe">assigned only to me</mat-checkbox><br>
-<button mat-raised-button (click)="getAllTodos()"> get all todos </button><br>
-<button mat-raised-button (click)="addTodo()">add Todo </button><br>
-<ul>
-  <li *ngFor="let todo of todos">{{todo.id}},{{todo.description}},{{todo.assignedTo}},{{todo.done}}</li>
-</ul>
